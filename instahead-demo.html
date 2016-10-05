@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Instahead</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  type="text/css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css"  type="text/css" rel="stylesheet">
+        <link href="./css/instahead.css"  type="text/css" rel="stylesheet">
+        </style>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://naver.github.io/egjs/latest/dist/pkgd/infiniteGrid.pkgd.min.js"></script>
+        <script src="./js/infiniteGrid-instahead.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- jumbotron -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <div class="jumbotron-contents">
+                            <h2>InfiniteGrid Demo</h2>
+                            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="instahead"></div>
+
+            <!-- infinite grid -->
+            <div id="grid" class="row" style="visibility:hidden"></div>
+        </div>
+        <script id="items-template" type="text/x-handlebars-template">
+            {{~#each items~}}
+            <div class="item">
+                <header class="real_header">
+                <img src="./img/{{user.profile}}">
+                <div>
+                    <a class="{{href}}">{{user.id}}</a>
+                </div>
+                </header>
+                <div class="thumbnail">
+                    <img class="img-rounded" src="{{imgSrc}}" />
+                    <div class="caption">
+                        <p><a href="{{href}}">{{desc}}</a></p>
+                    </div>
+                </div>
+                <header class="fake_header">
+                <img src="./img/{{user.profile}}">
+                <div>
+                    <a class="{{href}}">{{user.id}}</a>
+                </div>
+                </header>
+            </div>
+            {{~/each~}}
+        </script>
+        <script src="./js/instahead.js"></script>
+    </body>
+</html>
